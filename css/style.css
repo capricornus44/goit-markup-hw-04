@@ -1,12 +1,3 @@
-/* header-background: #FFFFFF;
-   hero-background and footer-background: #2F303A;
-   section-background: #E5E5E5;
-   team-background: #F5F4FA;
-   accent-color: #2196F3; 
-   link-color and title: #212121;
-   contacts-color and main text: #757575;
-   footer text: rgba(255, 255, 255, 0.6)*/
-
 :root {
   --primary-text-color: #757575;
   --additional-text-color: #212121;
@@ -18,6 +9,7 @@
 
 html {
   box-sizing: border-box;
+  background-color: #e5e5e5;
 }
 
 *,
@@ -74,11 +66,11 @@ img {
   height: auto;
 }
 
-/*PAGE HEADER
+/*Header for all pages
 ====================== */
-.site-header {
+/* .site-header {
   border-bottom: 1px solid #ececec;
-}
+} */
 
 .site-menu {
   display: flex;
@@ -138,6 +130,11 @@ img {
 }
 
 .contact-menu .link {
+  display: inline-flex;
+  align-self: baseline;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -146,14 +143,22 @@ img {
 }
 
 .nav-menu .link:hover,
-.nav-menu .link:focus,
-.contact-menu .link:hover,
-.contact-menu .link:focus {
+.nav-menu .link:focus {
   color: var(--accent-color);
 }
 
-/* Content of STUDIA - main page 
-=================================*/
+.contact-menu .link:hover,
+.contact-menu .link:focus {
+  color: var(--accent-color);
+  --color3: var(--accent-color);
+}
+
+.contact-menu .icon {
+  margin-right: 10px;
+}
+
+/* STUDIA - MAIN PAGE
+======================*/
 .hero {
   max-width: 1600px;
   height: 600px;
@@ -175,7 +180,6 @@ img {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 
 .hero-title {
   margin-top: 0;
@@ -203,8 +207,14 @@ img {
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.hero-btn:hover {
+  background-color: #188ce8;
+}
+
+/* STUDIA - Features */
 .features {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -230,10 +240,26 @@ img {
   margin-right: 30px;
 }
 
+.icon-box {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  background-color: var(--additional-bg-color);
+}
+
+.icon-box .icon {
+  display: block;
+  width: 100%;
+}
+
 .features-list .title {
   margin-top: 0;
   margin-bottom: 10px;
 
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
@@ -246,6 +272,7 @@ img {
   margin-bottom: 0;
 }
 
+/* STUDIA - Product */
 .product {
   padding-bottom: 94px;
 }
@@ -264,6 +291,7 @@ img {
   margin-right: 30px;
 }
 
+/* STUDIA - Team */
 .team {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -280,13 +308,6 @@ img {
   display: flex;
 }
 
-.team-list .item {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
 .team-list .item:not(:last-child) {
   margin-right: 30px;
 }
@@ -297,6 +318,13 @@ img {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
+
+  background-color: var(--primary-white-color);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .name {
@@ -312,17 +340,98 @@ img {
 
 .rank {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 16px;
 
   font-size: 16px;
   line-height: 1.17;
 }
 
-/* Content of PORTFOLIO
-======================= */
+.social-list {
+  display: flex;
+}
+
+.social-list > .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list .link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.social-list .link:hover,
+.social-list .link:focus {
+  background-color: var(--accent-color);
+  --color4: var(--primary-white-color);
+}
+
+/* STUDIA - Clients */
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients .section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.clients-list {
+  display: flex;
+}
+
+.clients-list > .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-list .link {
+  display: block;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.clients-list .link:hover,
+.clients-list .link:focus {
+  border: 1px solid var(--accent-color);
+  --color4: var(--accent-color);
+}
+
+.link-logo-1 {
+  padding: 20px 63px;
+}
+
+.link-logo-2 {
+  padding: 19px 65px;
+}
+
+.link-logo-3 {
+  padding: 24px 65px;
+}
+
+.link-logo-4 {
+  padding: 24px 45px;
+}
+
+.link-logo-5 {
+  padding: 22px 55px 21px 56px;
+}
+
+.link-logo-6 {
+  padding: 22px 41px;
+}
+
+/* PORTFOLIO
+=============*/
 .portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
+  border-top: 1px solid #ececec;
 }
 
 .filter-list {
@@ -344,13 +453,14 @@ img {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.625;
+  letter-spacing: inherit;
 
   color: var(--additional-text-color);
   background-color: var(--additional-bg-color);
 }
 
-.filter-btn:focus,
-.filter-btn:hover {
+.filter-btn:hover,
+.filter-btn:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
@@ -372,10 +482,17 @@ img {
   margin-bottom: 30px;
 }
 
+.portfolio-list .card:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .portfolio-list .link {
   display: block;
   text-decoration: none;
 }
+
+
 
 .portfolio-list .card-content {
   padding: 20px 24px;
@@ -406,13 +523,22 @@ img {
   color: var(--primary-text-color);
 }
 
-/*PAGE FOOTER
+/*Footer for all pages
 ====================== */
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
 
   background-color: var(--primary-bg-color);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: baseline;
+}
+
+.address-box {
+  margin-right: 70px;
 }
 
 .footer .logo {
@@ -446,4 +572,32 @@ img {
 
 .address-list .link:not(:last-child) {
   margin-bottom: 9px;
+}
+
+.sign-up {
+  display: block;
+  margin-bottom: 20px;
+
+  line-height: 1.17;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+
+.social-list .link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-list .link:hover .social-list .link:focus {
+  background-color: var(--accent-color);
+}
+
+.footer .icon {
+  --color4: var(--primary-white-color);
 }
