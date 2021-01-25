@@ -155,13 +155,27 @@ img {
 /* Content of STUDIA - main page 
 =================================*/
 .hero {
+  max-width: 1600px;
+  height: 600px;
   padding-top: 200px;
   padding-bottom: 200px;
+  margin: 0 auto;
+  border-top: 1px solid #ececec;
 
   text-align: center;
 
   background-color: var(--primary-bg-color);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../img/hero-bg.jpg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
 
 .hero-title {
   margin-top: 0;
